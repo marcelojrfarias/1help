@@ -2,7 +2,7 @@ const { Router } = require('express');
 
 const ordersRouter = Router();
 
-ordersRouter.get('/', async (request, response) => {
+ordersRouter.get('/', (request, response) => {
   return response.json({ route: 'price' });
 });
 
