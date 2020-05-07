@@ -1,0 +1,68 @@
+version: "3.6"
+
+networks:
+  1help-network:
+    driver: bridge
+
+services:
+  1help-gateway:
+    container_name: 1help-gateway
+    build: ./gateway
+    restart: always
+    volumes:
+      - ./gateway:/home/node/app
+    working_dir: /home/node/app
+    depends_on:
+      - 1help-zookeeper
+      - 1help-kafka
+    networks:
+      - 1help-network
+    links:
+      - 1help-zookeeper
+      - 1help-kafka
+    command: yarn start
+    ports:
+      - 3334:3333
+
+  1help-discounts:
+    container_name: 1help-discounts
+    build: ./discounts
+    restart: always
+    volumes:
+      - ./discounts:/home/node/app
+    working_dir: /home/node/app
+    depends_on:
+      - 1help-zookeeper
+      - 1help-kafka
+    networks:
+      - 1help-network
+    links:
+      - 1help-zookeeper
+      - 1help-kafka
+    command: yarn dev:server
+
+  1help-zookeeper:
+    container_name: 1help-zookeeper
+    image: wurstmeister/zookeeper:latest
+    restart: always
+    ports:
+      - "2181:2181"
+    networks:
+      - 1help-network
+
+  1help-kafka:
+    container_name: 1help-kafka
+    image: wurstmeister/kafka:2.11-1.1.0
+    restart: always
+    ports:
+      - "9092:9092"
+    depends_on:
+      - 1help-zookeeper
+    environment:
+      KAFKA_ADVERTISED_HOST_NAME: localhost
+      KAFKA_ZOOKEEPER_CONNECT: 1help-zookeeper:2181
+      KAFKA_CREATE_TOPICS: "get-price:1:1"
+    volumes:
+      - /var/run/docker.sock:/var/run/docker.sock
+    networks:
+      - 1help-network

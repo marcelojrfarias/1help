@@ -7,6 +7,4 @@ RUN yarn
 
 COPY . .
 
-CMD [ "yarn", "start"]
-
-EXPOSE 3334
+CMD [ "yarn", "dev:server"]
