@@ -28,7 +28,7 @@ Um teste para provar porque eu devo fazer parte da equipe da UmHelp.
 ### Definir da Arquitetura
 - [x] Pesquisar sobre Arquitetura Orientada a Serviços
 - [x] Desenhar uma arquitetura inicial
-  - https://whimsical.com/Q9reGfZx6GFxoPeZxgDZSf
+  - [Arquitetura proposta](https://whimsical.com/Q9reGfZx6GFxoPeZxgDZSf)
 - [ ] Validar arquitetura com especialistas
 
 ### Definir tecnologias
