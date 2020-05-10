@@ -2,9 +2,14 @@ import { getCustomRepository } from 'typeorm';
 import Discount from '../models/Discount';
 import DiscountsRepository from '../repositories/DiscountsRepository';
 
+enum DiscountType {
+  ABSOLUTE = 'absolute',
+  PERCENTAGE = 'percentage',
+}
+
 interface Request {
   name: string;
-  type: string;
+  type: DiscountType;
   value: number;
   user_id: string;
 }

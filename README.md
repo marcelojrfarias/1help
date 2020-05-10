@@ -7,6 +7,24 @@
   Desafio de Programação Back-End
 </h2>
 
+<p align="center">
+  <img alt="GitHub top language" src="https://img.shields.io/github/languages/top/marcelojrfarias/1help.svg">
+
+  <img alt="GitHub language count" src="https://img.shields.io/github/languages/count/marcelojrfarias/1help.svg">
+
+  <img alt="Repository size" src="https://img.shields.io/github/repo-size/marcelojrfarias/1help.svg">
+
+  <a href="https://github.com/marcelojrfarias/1help/commits/master">
+    <img alt="GitHub last commit" src="https://img.shields.io/github/last-commit/marcelojrfarias/1help.svg">
+  </a>
+
+  <a href="https://github.com/marcelojrfarias/1help/issues">
+    <img alt="Repository issues" src="https://img.shields.io/github/issues/marcelojrfarias/1help.svg">
+  </a>
+
+  <img alt="GitHub" src="https://img.shields.io/github/license/marcelojrfarias/1help.svg">
+</p>
+
 ## :dart: Objetivo
 > [ ... elaborar 3 microsserviços que possibilitam o agendamento de serviços de limpeza por parte de um usuário, com a possibilidade de aplicação de descontos promocionais. Os serviços deverão expor, publicamente, uma interface REST que deve ser provida pelo serviço de gateway ...](https://github.com/da1help/desafios/blob/master/desafio-back-end.md)
 

@@ -11,24 +11,6 @@
 </h4>
 
 <p align="center">
-  <img alt="GitHub top language" src="https://img.shields.io/github/languages/top/marcelojrfarias/1help.svg">
-
-  <img alt="GitHub language count" src="https://img.shields.io/github/languages/count/marcelojrfarias/1help.svg">
-
-  <img alt="Repository size" src="https://img.shields.io/github/repo-size/marcelojrfarias/1help.svg">
-
-  <a href="https://github.com/marcelojrfarias/1help/commits/master">
-    <img alt="GitHub last commit" src="https://img.shields.io/github/last-commit/marcelojrfarias/1help.svg">
-  </a>
-
-  <a href="https://github.com/marcelojrfarias/1help/issues">
-    <img alt="Repository issues" src="https://img.shields.io/github/issues/marcelojrfarias/1help.svg">
-  </a>
-
-  <img alt="GitHub" src="https://img.shields.io/github/license/marcelojrfarias/1help.svg">
-</p>
-
-<p align="center">
   <a href="#toolbox-tecnologias">Tecnologias</a>&nbsp;&nbsp;&nbsp;|&nbsp;&nbsp;&nbsp;
   <a href="#rocket-como-rodar">Como rodar</a>&nbsp;&nbsp;&nbsp;|&nbsp;&nbsp;&nbsp;
   <a href="#filecabinet-entidades">Entidades</a>&nbsp;&nbsp;&nbsp;|&nbsp;&nbsp;&nbsp;
