@@ -6,18 +6,14 @@
 <h2 align="center">
     Serviço de Descontos Individuais
 </h2>
-
 <h4 align="center">
   Serviço responsável por cadastrar, atualizar, deletar e buscar os descontos designados para cada usuário.
 </h4>
+
 <p align="center">
   <img alt="GitHub top language" src="https://img.shields.io/github/languages/top/marcelojrfarias/1help.svg">
 
   <img alt="GitHub language count" src="https://img.shields.io/github/languages/count/marcelojrfarias/1help.svg">
-
-  <a href="https://www.codacy.com/manual/marcelojrfarias/1help?utm_source=github.com&amp;utm_medium=referral&amp;utm_content=marcelojrfarias/1help&amp;utm_campaign=Badge_Grade">
-    <img src="https://api.codacy.com/project/badge/Grade/30892037f8b04be4a5ced98239e51eb2"/>
-  </a>
 
   <img alt="Repository size" src="https://img.shields.io/github/repo-size/marcelojrfarias/1help.svg">
 
@@ -33,12 +29,13 @@
 </p>
 
 <p align="center">
-  <a href="#rocket-tecnologias">Tecnologias</a>&nbsp;&nbsp;&nbsp;|&nbsp;&nbsp;&nbsp;
-  <a href="#gear-como-rodar">Como rodar</a>&nbsp;&nbsp;&nbsp;|&nbsp;&nbsp;&nbsp;
+  <a href="#toolbox-tecnologias">Tecnologias</a>&nbsp;&nbsp;&nbsp;|&nbsp;&nbsp;&nbsp;
+  <a href="#rocket-como-rodar">Como rodar</a>&nbsp;&nbsp;&nbsp;|&nbsp;&nbsp;&nbsp;
+  <a href="#filecabinet-entidades">Entidades</a>&nbsp;&nbsp;&nbsp;|&nbsp;&nbsp;&nbsp;
   <a href="#memo-licença">Licença</a>
 </p>
 
-## :rocket: Tecnologias
+## :toolbox: Tecnologias
 
 Este projeto foi desenvolvido utilizando as seguintes tecnologias:
 - [NodeJS][nodejs]
@@ -53,7 +50,7 @@ Este projeto foi desenvolvido utilizando as seguintes tecnologias:
 - [Visual Studio Code][vscode]
 - E alguns outros pacotes...
 
-## :gear: Como rodar
+## :rocket: Como rodar
 
 Para clonar e rodar essa aplicação, você irá precisar do [Git][git], [Node.js v10.16][nodejs] (ou superior) + [Yarn v1.13][yarn] (ou superior) instalados em seu computador. Rode em seu terminal:
 
@@ -70,6 +67,18 @@ $ yarn
 # Run the app
 $ yarn dev:server
 ```
+
+## :file_cabinet: Entidades
+### Desconto
+| Descrição                 | Campo   | Tipo                            |
+|---------------------------|---------|---------------------------------|
+| Identificação do desconto | id      | uuid                            |
+| Nome do desconto          | name    | varchar                         |
+| Tipo do desconto*         | type    | enum ['absolute', 'percentual'] |
+| Valor do desconto*        | value   | integer                         |
+| Identificação do usuário* | user_id | uuid                            |
+
+**requisito do projeto.*
 
 ## :memo: Licença
 Este projeto está sob a licença MIT. Olhe o [LICENSE](https://github.com/marcelojrfarias/1help/blob/master/LICENSE) para maiores informações.

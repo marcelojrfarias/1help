@@ -1,96 +1,27 @@
-# Desafio UmHelp
-Um teste para provar porque eu devo fazer parte da equipe da UmHelp.
+<h1 align="center">
+  <img alt="Desafio UmHelp" src="https://res.cloudinary.com/marcelojrfarias/image/upload/v1589133507/1help_vfpr84.jpg" />
+  <br>
+  UmHelp
+</h1>
+<h2 align="center">
+  Desafio de Programação Back-End
+</h2>
 
-## Objetivo
+## :dart: Objetivo
 > [ ... elaborar 3 microsserviços que possibilitam o agendamento de serviços de limpeza por parte de um usuário, com a possibilidade de aplicação de descontos promocionais. Os serviços deverão expor, publicamente, uma interface REST que deve ser provida pelo serviço de gateway ...](https://github.com/da1help/desafios/blob/master/desafio-back-end.md)
 
-### Tenho que fazer
-- [ ] Atendar às regras de negócio
-- [ ] Obedecer às restrições
-- [ ] Observar os critérios de avaliação
-- [x] Disponibilizar minha resposta para o desafio por meio de um repositório Git
+## :gear: Serviços
 
-### Devo fazer
-- [ ] Testes unitários e de integração
-- [ ] Validações e erros bem estruturados
+### Gateway
+Responsável por expor uma interface REST pública para acesso aos demais serviços.
 
-### Poderia fazer
-- [ ] Sistema deployado em algum provedor de cloud
+### Pedidos de Limpeza
+Responsável por precificar, cadastrar, atualizar, deletar e buscar os pedidos de limpeza.
 
-### Não vou fazer
-- [ ] Elaborar um front-end web ou de outro formato
+### Descontos individuais
+Responsável por cadastrar, atualizar, deletar e buscar os descontos designados para cada usuário.
 
-## Planejamento
-
-### Preparação
-- [x] Ler a descrição do desafio inteira com atenção
-
-### Definir da Arquitetura
-- [x] Pesquisar sobre Arquitetura Orientada a Serviços
-- [x] Desenhar uma arquitetura inicial
-  - [Arquitetura proposta](https://whimsical.com/Q9reGfZx6GFxoPeZxgDZSf)
-- [ ] Validar arquitetura com especialistas
-
-### Definir tecnologias
-- [x] Definir as 2 linguagens de programação
-  - Python: Gateway API
-  - Typescript: Pedidos e Descontos
-- [ ] Pesquisar sobre frameworks de microserviços para cada linguagem
-  - Python: Faust
-  - Typescript: Moleculer vs Nest.js (?)
-- [x] Escolher qual tipo de banco de dados e DBMS
-  - SQL + PostgreSQL
-- [x] Mecanismo de mensageria
-  - Kafka
-- [ ] Validar tecnologias com especialistas
-
-### Desenvolver a aplicação
-- [ ] Serviço 1: Gateway
-  - [ ] **GET** `/price`
-  - [ ] **POST** `/requests`
-  - [ ] **GET** `/requests`
-  - [ ] **PUT** `/requests`
-  - [ ] **PATCH** `/requests`
-  - [ ] **DELETE** `/requests`
-  - [ ] **POST** `/discounts`
-  - [ ] **PUT** `/discounts`
-  - [ ] **PATCH** `/discounts`
-  - [ ] **DELETE** `/discounts`
-- [ ] Serviço 2: Pedidos de limpeza
-  - [ ] Calcular o preço
-  - [ ] Consultar descontos
-  - [ ] Aplicar desconto
-  - [ ] Retornar preço
-  - [ ] Cadastrar pedido
-  - [ ] Atualizar pedido
-  - [ ] Deletar pedido
-- [ ] Serviço 3: Descontos individuais
-  - [ ] Cadastrar descontos
-  - [ ] Retornar melhor desconto
-  - [ ] Atualizar desconto
-  - [ ] Deletar desconto
-
-### Entidades
-### Pedido de limpeza
-- Identificação do pedido
-- Data do pedido
-- Duração da limpeza
-- Identificação do usuário solicitante
-- Preço
-- Identificação do desconto aplicado
-- Preço com desconto
-
-### Desconto
-- Identificação do desconto
-- Tipo do desconto (valor absoluto ou porcentagem)
-- Valor do desconto
-- Identificação do usuário que tem direito ao desconto
-
-## Dúvidas
-- É permitido criar dois descontos com o mesmo tipo e valor pro mesmo usuário?
-- O tipo do desconto deve ser exclusivamente valor absoluto ou porcentagem?
-
-## Referências
+## :book: Referências
 
 ### Arquitetura Orientada a Serviços
 - [Microservice Architecture by Chris Richardson](https://microservices.io/)
