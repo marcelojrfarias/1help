@@ -1,4 +1,10 @@
-import { Entity, Column, PrimaryGeneratedColumn } from 'typeorm';
+import {
+  Entity,
+  Column,
+  PrimaryGeneratedColumn,
+  CreateDateColumn,
+  UpdateDateColumn,
+} from 'typeorm';
 
 export enum DiscountType {
   ABSOLUTE = 'absolute',
@@ -25,6 +31,12 @@ class Discount {
 
   @Column('uuid')
   user_id: string;
+
+  @CreateDateColumn()
+  created_at: Date;
+
+  @UpdateDateColumn()
+  updated_at: Date;
 }
 
 export default Discount;
