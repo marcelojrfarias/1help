@@ -2,7 +2,7 @@
 Um teste para provar porque eu devo fazer parte da equipe da UmHelp.
 
 ## Objetivo
-> ... elaborar 3 microsserviços que possibilitam o agendamento de serviços de limpeza por parte de um usuário, com a possibilidade de aplicação de descontos promocionais. Os serviços deverão expor, publicamente, uma interface REST que deve ser provida pelo serviço de gateway ...
+> [ ... elaborar 3 microsserviços que possibilitam o agendamento de serviços de limpeza por parte de um usuário, com a possibilidade de aplicação de descontos promocionais. Os serviços deverão expor, publicamente, uma interface REST que deve ser provida pelo serviço de gateway ...](https://github.com/da1help/desafios/blob/master/desafio-back-end.md)
 
 ### Tenho que fazer
 - [ ] Atendar às regras de negócio
@@ -23,7 +23,7 @@ Um teste para provar porque eu devo fazer parte da equipe da UmHelp.
 ## Planejamento
 
 ### Preparação
-- [x] Ler este documento inteiro com atenção
+- [x] Ler a descrição do desafio inteira com atenção
 
 ### Definir da Arquitetura
 - [x] Pesquisar sobre Arquitetura Orientada a Serviços
@@ -85,6 +85,10 @@ Um teste para provar porque eu devo fazer parte da equipe da UmHelp.
 - Tipo do desconto (valor absoluto ou porcentagem)
 - Valor do desconto
 - Identificação do usuário que tem direito ao desconto
+
+## Dúvidas
+- É permitido criar dois descontos com o mesmo tipo e valor pro mesmo usuário?
+- O tipo do desconto deve ser exclusivamente valor absoluto ou porcentagem?
 
 ## Referências
 

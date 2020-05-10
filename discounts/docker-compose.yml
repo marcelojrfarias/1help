@@ -1,0 +1,36 @@
+version: "3.6"
+
+networks:
+  1help-network:
+    driver: bridge
+
+services:
+  discounts:
+    container_name: discounts
+    build: ./
+    restart: always
+    volumes:
+      - ./:/home/node/app
+    working_dir: /home/node/app
+    depends_on:
+      - discounts-database
+    networks:
+      - 1help-network
+    links:
+      - discounts-database
+    command: yarn dev:server
+
+  discounts-database:
+    container_name: discounts-database
+    image: postgres
+    restart: always
+    environment:
+      POSTGRES_DB: discounts
+      POSTGRES_USER: discounts
+      POSTGRES_PASSWORD: discounts
+    ports:
+      - 5432:5432
+    networks:
+      - 1help-network
+
+# docker run --name discounts-database -e POSTGRES_PASSWORD=discounts -e POSTGRES_DB=discounts -e POSTGRES_USER=discounts -p 5432:5432 -d postgres
