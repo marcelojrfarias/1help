@@ -65,10 +65,16 @@
   - [ ] Deletar pedido
 - [ ] Serviço 3: Descontos individuais
   - [x] Cadastrar descontos
-  - [ ] Retornar melhor desconto
-  - [ ] Atualizar desconto
-  - [ ] Deletar desconto
+  - [x] Retornar melhor desconto
+  - [x] Atualizar desconto
+  - [x] Deletar desconto
+  - [ ] Refatorar - DDD 
+  - [ ] Variáveis de ambiente
+  - [ ] Docker files
 
 ## :question: Dúvidas
-- É permitido criar dois descontos com o mesmo tipo e valor pro mesmo usuário?
+- É permitido criar dois descontos com o mesmo iguais pro mesmo usuário?
 - O tipo do desconto deve ser exclusivamente valor absoluto ou porcentagem?
+- O método PATCH deve ser genérico para aceitar atualização de qualquer parâmetro ou um parâmetro específico?
+- Em caso de um menor preço total resultante igual entre diferentes descontos, qual será aplicado?
+- Em caso de existir um desconto maior que o preço original e outro que seja exatamente igual (zerando o preço final, por exemplo), qual deve ser aplicado?
