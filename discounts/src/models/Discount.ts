@@ -6,7 +6,7 @@ import {
   UpdateDateColumn,
 } from 'typeorm';
 
-export enum DiscountType {
+enum DiscountType {
   ABSOLUTE = 'absolute',
   PERCENTAGE = 'percentage',
 }
