@@ -12,6 +12,10 @@
 
   <img alt="GitHub language count" src="https://img.shields.io/github/languages/count/marcelojrfarias/1help.svg">
 
+  <a href="https://www.codacy.com/manual/marcelojrfarias/1help?utm_source=github.com&amp;utm_medium=referral&amp;utm_content=marcelojrfarias/1help&amp;utm_campaign=Badge_Grade">
+    <img src="https://api.codacy.com/project/badge/Grade/30892037f8b04be4a5ced98239e51eb2"/>
+  </a>
+
   <img alt="Repository size" src="https://img.shields.io/github/repo-size/marcelojrfarias/1help.svg">
 
   <a href="https://github.com/marcelojrfarias/1help/commits/master">
