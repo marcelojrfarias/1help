@@ -4,19 +4,34 @@ import CreateDiscountService from '../services/CreateDiscountService';
 import UpdateDiscountService from '../services/UpdateDiscountService';
 import DeleteDiscountService from '../services/DeleteDiscountService';
 import UpdateDiscountNameService from '../services/UpdateDiscountNameService';
+import BestDiscountService from '../services/BestDiscountService';
 
 import validateDiscountId from '../middlewares/validateDiscountId';
-import validateUserId from '../middlewares/validateUserId';
+import validateDiscountUserId from '../middlewares/validateDiscountUserId';
 import validateDiscountType from '../middlewares/validateDiscountType';
 import validateDiscountValue from '../middlewares/validateDiscountValue';
+import validateRequestPrice from '../middlewares/validateRequestPrice';
 
 const discountsRouter = Router();
 
-discountsRouter.use('/:id', validateDiscountId);
+discountsRouter.get(
+  '/best',
+  validateDiscountUserId,
+  validateRequestPrice,
+  async (request, response) => {
+    const { user_id, price } = request.body;
+
+    const bestDiscount = new BestDiscountService();
+
+    const discount = await bestDiscount.execute({ user_id, price });
+
+    response.status(200).json(discount);
+  },
+);
 
 discountsRouter.post(
   '/',
-  validateUserId,
+  validateDiscountUserId,
   validateDiscountType,
   validateDiscountValue,
   async (request, response) => {
@@ -37,7 +52,8 @@ discountsRouter.post(
 
 discountsRouter.put(
   '/:id',
-  validateUserId,
+  validateDiscountId,
+  validateDiscountUserId,
   validateDiscountType,
   validateDiscountValue,
   async (request, response) => {
@@ -58,7 +74,7 @@ discountsRouter.put(
   },
 );
 
-discountsRouter.patch('/:id', async (request, response) => {
+discountsRouter.patch('/:id', validateDiscountId, async (request, response) => {
   const { name } = request.body;
   const { id } = request.params;
 
@@ -72,16 +88,20 @@ discountsRouter.patch('/:id', async (request, response) => {
   response.status(200).json(discount);
 });
 
-discountsRouter.delete('/:id', async (request, response) => {
-  const { id } = request.params;
+discountsRouter.delete(
+  '/:id',
+  validateDiscountId,
+  async (request, response) => {
+    const { id } = request.params;
 
-  const deleteDiscount = new DeleteDiscountService();
+    const deleteDiscount = new DeleteDiscountService();
 
-  await deleteDiscount.execute({
-    id,
-  });
+    await deleteDiscount.execute({
+      id,
+    });
 
-  response.status(200).send();
-});
+    response.status(200).send();
+  },
+);
 
 export default discountsRouter;
