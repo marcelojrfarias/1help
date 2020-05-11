@@ -56,7 +56,7 @@ $ yarn dev:server
 |---------------------------|---------|---------------------------------|
 | Identificação do desconto | id      | uuid                            |
 | Nome do desconto          | name    | varchar                         |
-| Tipo do desconto*         | type    | enum ['absolute', 'percentual'] |
+| Tipo do desconto*         | type    | enum ['absolute', 'percentage'] |
 | Valor do desconto*        | value   | integer                         |
 | Identificação do usuário* | user_id | uuid                            |
 

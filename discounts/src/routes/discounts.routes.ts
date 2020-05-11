@@ -5,10 +5,19 @@ import UpdateDiscountService from '../services/UpdateDiscountService';
 import DeleteDiscountService from '../services/DeleteDiscountService';
 import UpdateDiscountNameService from '../services/UpdateDiscountNameService';
 
+import validateDiscountId from '../middlewares/validateDiscountId';
+import validateUserId from '../middlewares/validateUserId';
+import validateDiscountType from '../middlewares/validateDiscountType';
+
 const discountsRouter = Router();
 
-discountsRouter.post('/', async (request, response) => {
-  try {
+discountsRouter.use('/:id', validateDiscountId);
+
+discountsRouter.post(
+  '/',
+  validateUserId,
+  validateDiscountType,
+  async (request, response) => {
     const { name, type, value, user_id } = request.body;
 
     const createDiscount = new CreateDiscountService();
@@ -21,27 +30,30 @@ discountsRouter.post('/', async (request, response) => {
     });
 
     response.status(201).json(discount);
-  } catch (err) {
-    return response.status(400).json({ error: err.message });
-  }
-});
+  },
+);
 
-discountsRouter.put('/:id', async (request, response) => {
-  const { name, type, value, user_id } = request.body;
-  const { id } = request.params;
+discountsRouter.put(
+  '/:id',
+  validateUserId,
+  validateDiscountType,
+  async (request, response) => {
+    const { name, type, value, user_id } = request.body;
+    const { id } = request.params;
 
-  const updateDiscount = new UpdateDiscountService();
+    const updateDiscount = new UpdateDiscountService();
 
-  const discount = await updateDiscount.execute({
-    id,
-    name,
-    type,
-    value,
-    user_id,
-  });
+    const discount = await updateDiscount.execute({
+      id,
+      name,
+      type,
+      value,
+      user_id,
+    });
 
-  response.status(200).json(discount);
-});
+    response.status(200).json(discount);
+  },
+);
 
 discountsRouter.patch('/:id', async (request, response) => {
   const { name } = request.body;
