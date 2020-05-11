@@ -1,6 +1,7 @@
 import { getCustomRepository } from 'typeorm';
 import Discount from '../models/Discount';
 import DiscountsRepository from '../repositories/DiscountsRepository';
+import AppError from '../errors/AppError';
 
 enum DiscountType {
   ABSOLUTE = 'absolute',
@@ -28,7 +29,7 @@ class UpdateDiscountService {
     const discount = await discountsRepository.findOne(id);
 
     if (!discount) {
-      throw new Error('Discount not found!');
+      throw new AppError('Discount not found!', 404);
     }
 
     const updatedDiscount = Object.assign(discount, {

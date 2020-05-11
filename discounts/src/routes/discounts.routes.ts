@@ -27,58 +27,46 @@ discountsRouter.post('/', async (request, response) => {
 });
 
 discountsRouter.put('/:id', async (request, response) => {
-  try {
-    const { name, type, value, user_id } = request.body;
-    const { id } = request.params;
+  const { name, type, value, user_id } = request.body;
+  const { id } = request.params;
 
-    const updateDiscount = new UpdateDiscountService();
+  const updateDiscount = new UpdateDiscountService();
 
-    const discount = await updateDiscount.execute({
-      id,
-      name,
-      type,
-      value,
-      user_id,
-    });
+  const discount = await updateDiscount.execute({
+    id,
+    name,
+    type,
+    value,
+    user_id,
+  });
 
-    response.status(200).json(discount);
-  } catch (err) {
-    return response.status(404).json({ error: err.message });
-  }
+  response.status(200).json(discount);
 });
 
 discountsRouter.patch('/:id', async (request, response) => {
-  try {
-    const { name } = request.body;
-    const { id } = request.params;
+  const { name } = request.body;
+  const { id } = request.params;
 
-    const updateDiscountName = new UpdateDiscountNameService();
+  const updateDiscountName = new UpdateDiscountNameService();
 
-    const discount = await updateDiscountName.execute({
-      id,
-      name,
-    });
+  const discount = await updateDiscountName.execute({
+    id,
+    name,
+  });
 
-    response.status(200).json(discount);
-  } catch (err) {
-    return response.status(404).json({ error: err.message });
-  }
+  response.status(200).json(discount);
 });
 
 discountsRouter.delete('/:id', async (request, response) => {
-  try {
-    const { id } = request.params;
+  const { id } = request.params;
 
-    const deleteDiscount = new DeleteDiscountService();
+  const deleteDiscount = new DeleteDiscountService();
 
-    await deleteDiscount.execute({
-      id,
-    });
+  await deleteDiscount.execute({
+    id,
+  });
 
-    response.status(200).send();
-  } catch (err) {
-    return response.status(404).json({ error: err.message });
-  }
+  response.status(200).send();
 });
 
 export default discountsRouter;

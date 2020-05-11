@@ -1,6 +1,7 @@
 import { getCustomRepository } from 'typeorm';
-import Discount from '../models/Discount';
 import DiscountsRepository from '../repositories/DiscountsRepository';
+
+import AppError from '../errors/AppError';
 
 interface Request {
   id: string;
@@ -13,7 +14,7 @@ class DeleteDiscountService {
     const discount = await discountsRepository.findOne(id);
 
     if (!discount) {
-      throw new Error('Discount not found!');
+      throw new AppError('Discount not found!', 404);
     }
 
     await discountsRepository.delete(discount);

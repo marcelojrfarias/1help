@@ -3,9 +3,9 @@ import { MigrationInterface, QueryRunner, TableColumn } from 'typeorm';
 export default class RemoveIsUniqueFromDiscountNameColumn1589153804721
   implements MigrationInterface {
   public async up(queryRunner: QueryRunner): Promise<void> {
-    await queryRunner.dropColumn('discounts', 'name');
-    await queryRunner.addColumn(
+    await queryRunner.changeColumn(
       'discounts',
+      'name',
       new TableColumn({
         name: 'name',
         type: 'varchar',
@@ -14,9 +14,9 @@ export default class RemoveIsUniqueFromDiscountNameColumn1589153804721
   }
 
   public async down(queryRunner: QueryRunner): Promise<void> {
-    await queryRunner.dropColumn('discounts', 'name');
-    await queryRunner.addColumn(
+    await queryRunner.changeColumn(
       'discounts',
+      'name',
       new TableColumn({
         name: 'name',
         type: 'varchar',
