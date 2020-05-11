@@ -8,6 +8,7 @@ import UpdateDiscountNameService from '../services/UpdateDiscountNameService';
 import validateDiscountId from '../middlewares/validateDiscountId';
 import validateUserId from '../middlewares/validateUserId';
 import validateDiscountType from '../middlewares/validateDiscountType';
+import validateDiscountValue from '../middlewares/validateDiscountValue';
 
 const discountsRouter = Router();
 
@@ -17,6 +18,7 @@ discountsRouter.post(
   '/',
   validateUserId,
   validateDiscountType,
+  validateDiscountValue,
   async (request, response) => {
     const { name, type, value, user_id } = request.body;
 
@@ -37,6 +39,7 @@ discountsRouter.put(
   '/:id',
   validateUserId,
   validateDiscountType,
+  validateDiscountValue,
   async (request, response) => {
     const { name, type, value, user_id } = request.body;
     const { id } = request.params;
